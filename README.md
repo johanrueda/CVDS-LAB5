@@ -7,7 +7,9 @@ Abrimos una consola de comandos windows e ingresamos el código
     telnet www.escuelaing.edu.co 80
  
 Realizamos la solicitud `GET sssss/abc.html HTTP/1.0` La cual nos da como resultado:
+
 ![301 Moved permanently.](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/2.PNG)
+
 Existen **Diferentes Status Codes en HTTP:**
  - [1xx Respuestas informativas](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#1xx_informational_response):  
  > Petición recibida, continuando proceso. Esta respuesta significa que el servidor ha recibido los encabezados de la petición, y que el cliente debería proceder a enviar el cuerpo de la misma (en el caso de peticiones para las cuales el cuerpo necesita ser enviado.
@@ -22,7 +24,7 @@ Existen **Diferentes Status Codes en HTTP:**
 
 Ahora realizaremos la siguiente conexión  `telnet www.httpbin.org 80` y realizamos la petición: `GET /html HTTP/1.1`:
 
-INSERTAR IMAGEN
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/3.PNG)
 
 Obviamente la petición GET es insuficiente así que también tenemos la petición POST las cuales se diferencian en la forma de enviar los datos a la página cuando se pulsa el botón “Enviar”. Mientras que el método **GET** envía los datos usando la URL, el método **POST** los envía de forma que no podemos verlos (en un segundo plano u "ocultos" al usuario).
 tambien existen **peticiones** como:
@@ -38,8 +40,43 @@ tambien existen **peticiones** como:
 
 si embargo En la practica no se utiliza `telnet` para hacer peticiones a sitios web sino el comando `curl` con ayuda de la linea de comandos `curl www.httpbin.org` que podemos usar con diferentes parámetros como:
 
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/curl-1.PNG)
+
  - `curl -v`: curl explicará y mostrará muchas más cosas.
+ 
+ ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/curl-v.PNG)
+ 
  - `curl -i`:mostrara los conjuntos de encabezados que normalmente estan ocultos.
+ 
+ ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/curl-i.PNG)
+ 
+ ## Parte II. - Haciendo una aplicación Web dinámica a bajo nivel.
+Creamos un proyecto en maven con el arquetipo de aplicación Web estándar maven-archetype-webapp.
+
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/mvncreacion.PNG)
+
+luego de hacer las respectivas modificaciones a nuestro pom.xml Compilamos y ejecutamos la aplicación en el servidor embebido Tomcat, a través de Maven con:
+```
+mvn package
+mvn tomcat7:run
+```
+obtemenos como resultado:
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/mvnpackagecorrecto.PNG)
+
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/tomcatcorrecto.PNG)
+
+abrimos un navegador y ponemos la URL con la cual se le enviarán peticiones al ‘SampleServlet’, ademas de adicionar a esta un petición GET y opcional-mente el parámetro 'name':
+
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/helloServletcorrecto.PNG)
+
+ahora vamos a introducir la URL con la cual se le enviaran peticiones a 'jojoServlet' con el parámetro id:
+
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/jjservletcorrecto.PNG)
+ 
+en caso de no poner este parametro veremos:
+  
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/jjservleterror.PNG)
+
 
 ## Biblografia
 
