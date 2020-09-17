@@ -106,12 +106,54 @@ creamos el archivo `index.html` en el directorio `src/main/webapp/index.html`:
         </body>
     </html>
 en primer caso usaremos el metodo POST:
+
 ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/indexpost.PNG)
 
 y luego el metodo GET:
+
 ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/indexget.PNG)
 
 como vemos la diferencia es como envia los parametros, esto lo notamos con el URL.
+
+## Parte IV. - Frameworks Web MVC – Java Server Faces / Prime Faces
+vamos a realizar el proyecto de una calculadora estadística, para esto creamos el proyecto con el arquetipo antes mencionado.
+
+ 1. En nuestro caso esta sera nuestra calculadora estadística muy simple:
+ 
+ ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/aceptacionreiniciar.PNG)
+ 
+ 3. realizaremos algunas pruebas de aceptación.
+ 
+ ***calcular:***
+
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/aceptacioncalcular.PNG) 		
+
+***Reiniciar:***
+ 
+ ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/aceptacionreiniciar.PNG)
+
+
+ 4. Probaremos en dos navegadores diferentes:
+
+  ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/pruevanavegador.PNG)
+
+ 5. con anotación @ApplicationScoped:
+
+ ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/aceptacionreiniciar.PNG)
+ 
+ 6. con anotación @SessionScoped:
+
+ ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/sessionscopped.PNG)
+ 
+ 7. buscaremos nuestro elemento oculto:
+ 
+  ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/numerooculto.PNG)
+  
+ 8. por ultimo añadiremos una tabla que nos guarde los números ingresados anteriormente.
+
+  ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/tabla.PNG)
+
+
 
 
 ## Biblografia
