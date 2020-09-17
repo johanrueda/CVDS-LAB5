@@ -1,2 +1,48 @@
-# CVDS-LAB5
-## Joel Carvajal - Johan Rueda
+
+# **Laboratorio 5 - MVC Primefaces Introduction - 2020-2**
+### Joel Carvajal - Johan Rueda
+## Parte I. - Jugando a ser un cliente HTTP
+Abrimos una consola de comandos windows e ingresamos el código
+
+    telnet www.escuelaing.edu.co 80
+ 
+Realizamos la solicitud `GET sssss/abc.html HTTP/1.0` La cual nos da como resultado:
+![301 Moved permanently.](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/2.PNG)
+Existen **Diferentes Status Codes en HTTP:**
+ - [1xx Respuestas informativas](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#1xx_informational_response):  
+ > Petición recibida, continuando proceso. Esta respuesta significa que el servidor ha recibido los encabezados de la petición, y que el cliente debería proceder a enviar el cuerpo de la misma (en el caso de peticiones para las cuales el cuerpo necesita ser enviado.
+ - [  2xx: Peticiones correctas](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#2xx:_Peticiones_correctas):
+> Esta clase de código de estado indica que la petición fue recibida correctamente, entendida y aceptada.
+ - [3xx: Redirecciones](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#3xx:_Redirecciones):
+> El cliente tiene que tomar una acción adicional para completar la petición.
+ - [4xx: Errores del cliente](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#4xx:_Errores_del_cliente):
+ > La solicitud contiene sintaxis incorrecta o no puede procesarse.
+ - [ 5xx: Errores de servidor](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#5xx:_Errores_de_servidor):
+> El servidor falló al completar una solicitud aparentemente válida.
+
+Ahora realizaremos la siguiente conexión  `telnet www.httpbin.org 80` y realizamos la petición: `GET /html HTTP/1.1`:
+
+INSERTAR IMAGEN
+
+Obviamente la petición GET es insuficiente así que también tenemos la petición POST las cuales se diferencian en la forma de enviar los datos a la página cuando se pulsa el botón “Enviar”. Mientras que el método **GET** envía los datos usando la URL, el método **POST** los envía de forma que no podemos verlos (en un segundo plano u "ocultos" al usuario).
+tambien existen **peticiones** como:
+- [GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET): El método `GET` solicita una representación de un recurso específico. Las peticiones que usan el método `GET`  sólo deben recuperar datos.
+- [HEAD](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD) : El método  `HEAD`  pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta.
+- [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST): El método  `POST`  se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.
+- [PUT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT): El modo `PUT` reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
+- [DELETE](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE): El método `DELETE`  borra un recurso en específico.
+- [CONNECT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/CONNECT):El método `CONNECT`  establece un túnel hacia el servidor identificado por el recurso.
+- [OPTIONS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS):El método `OPTIONS` es utilizado para describir las opciones de comunicación para el recurso de destino.
+- [TRACE](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/TRACE): El método `TRACE` realiza una prueba de bucle de retorno de mensaje a lo largo de la ruta al recurso de destino.
+- [PATCH](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH):El método `PATCH`  es utilizado para aplicar modificaciones parciales a un recurso.
+
+si embargo En la practica no se utiliza `telnet` para hacer peticiones a sitios web sino el comando `curl` con ayuda de la linea de comandos `curl www.httpbin.org` que podemos usar con diferentes parámetros como:
+
+ - `curl -v`: curl explicará y mostrará muchas más cosas.
+ - `curl -i`:mostrara los conjuntos de encabezados que normalmente estan ocultos.
+
+## Biblografia
+
+ - https://es.wikipedia.org/wiki/Anexo:Códigos_de_estado_HTTP
+ - https://developer.mozilla.org/es/docs/Web/HTTP/Methods
+ - https://ec.haxx.se/usingcurl/usingcurl-verbose
