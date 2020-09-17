@@ -77,6 +77,42 @@ en caso de no poner este parametro veremos:
   
 ![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/jjservleterror.PNG)
 
+## Parte III
+creamos el archivo `index.html` en el directorio `src/main/webapp/index.html`:
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Start Page</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        </head>
+    	<script>
+    	function validateForm() {
+    		var x = document.forms["form"]["id"].value;
+    		if (x == "") {
+    			alert("campo vacio");
+    			return false;
+    		}
+    	}
+    	</script>
+        <body bgcolor="black">
+    	<center>
+    		<h2><font  face="Georgia, Arial" color="#ffffff"> Introduzca el ID </font></h2>
+    		<form name="form" action="/jjServlet" method="get">
+    			<input type="text" name="id" required>
+    			<input type="submit" value="ENVIAR">
+    		</form>
+    	</center>
+        </body>
+    </html>
+en primer caso usaremos el metodo POST:
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/indexpost.PNG)
+
+y luego el metodo GET:
+![](https://github.com/johanrueda/CVDS-LAB5/blob/master/Imagenes/indexget.PNG)
+
+como vemos la diferencia es como envia los parametros, esto lo notamos con el URL.
+
 
 ## Biblografia
 
